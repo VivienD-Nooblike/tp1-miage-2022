@@ -8,7 +8,7 @@ import javax.persistence.Id;
 /**
  * Un item à faire, immuable
  * Sert à la fois d'entité JPA et de DTO (entrée/sortie des services Web)
- * 
+ * salut
  * @author bflorat
  *
  */

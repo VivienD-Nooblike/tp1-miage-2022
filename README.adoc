@@ -4,7 +4,7 @@ NOTE: TP de trois slots de 1h20
 
 #Hugo HERVIEUX# et #Vivien DUVERNOIS#
 
-Commentaires éventuels des étudiants : #XXXXXX#
+Commentaires éventuels des étudiants : #test#
 
 ## Pré-requis 
 
