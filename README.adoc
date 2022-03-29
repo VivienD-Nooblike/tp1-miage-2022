@@ -35,16 +35,28 @@ TIP: [Rappel Git] Trois dépôts sont ici utilisés: le dépot Github de l'ensei
 * Observer le code du projet `todolist-debut-ex1`
 
 *Le code est-il structuré en couches ? Quel problèmes ce code peut-il poser ?*
+Le code n'est pas structuré en couches puisque tous les fichiers .java sont dans le même package, peu importe leur rôle.
+L'intêret d'une architecture en plusieurs couches est de séparer les responsabilités de chaque couche et de faciliter le tests.
+En effet, chaque couche est indépendante des autres dans une structure multi-couches. Ici, en déveoppant tout au même endroit,
+Dans cette forme mono-couche, le code sera de plus en plus difficile à maintenir, à tester, etc.
 
 *Où se trouve le code métier (voir la règle de gestion RG 1) ?*
+Le code métier se situe dans le fichier TodoListController du package principal.
 
 *Cette règle est-elle facilement testable par un test unitaire ?*
+Cette règle est facile à tester, il suffit de créer deux items : l'un de plus de 24h et un de moins de 24h, et de vérifier que le contenu est égal
+à "[LATE!]".
 
 * Lancer une base PostgreSQL en Docker dans un terminal (on lance ici la base en mode interactif pour visualiser son activité. Pour la lancer en tâche de fond, remplacer les options `it` par `d` comme 'daemon'):
 ```bash
 docker run -it -e POSTGRES_PASSWORD=password -p 5432:5432 postgres
 ```
 *Expliquer cette ligne de commande (y compris les options utilisées)*
+docker run permet de lancer un conteneur docker
+-it permet de lancer en mode intéractif pour observer l'activité du conteneur lancé
+-e permet d'initialiser les variables d'environnement (ici le mdp de la base PostgreSQL)
+-p permet de choisir le port sur lequel le conteneur doit se connecter
+postgres est le conteneur contenant la base PostgreSQL
 
 * Compléter le code manquant dans la méthode `TodoListController.createTodoItem()`
 
