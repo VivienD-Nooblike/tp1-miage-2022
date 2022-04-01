@@ -62,6 +62,8 @@ postgres est le conteneur contenant la base PostgreSQL
 
 *Pourquoi `todoItemRepository` est-il `null` ? Quelle est la meilleure façon de l'injecter ?*
 
+Il est null car il n'a pas été initialisé. On va utiliser l'injection de dépendance pour régler ce problème.
+
 * Modifier le code en conséquence.
 
 * Tester vos endpoints avec un client REST.
