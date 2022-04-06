@@ -35,13 +35,13 @@ TIP: [Rappel Git] Trois dépôts sont ici utilisés: le dépot Github de l'ensei
 * Observer le code du projet `todolist-debut-ex1`
 
 *Le code est-il structuré en couches ? Quel problèmes ce code peut-il poser ?*
-Le code n'est pas structuré en couches puisque tous les fichiers .java sont dans le même package, peu importe leur rôle.
+* Le code n'est pas structuré en couches puisque tous les fichiers .java sont dans le même package, peu importe leur rôle.
 L'intêret d'une architecture en plusieurs couches est de séparer les responsabilités de chaque couche et de faciliter le tests.
 En effet, chaque couche est indépendante des autres dans une structure multi-couches. Ici, en déveoppant tout au même endroit,
 Dans cette forme mono-couche, le code sera de plus en plus difficile à maintenir, à tester, etc.
 
 *Où se trouve le code métier (voir la règle de gestion RG 1) ?*
-Le code métier se situe dans le fichier TodoListController du package principal.
+* Le code métier se situe dans le fichier TodoListController du package principal.
 
 *Cette règle est-elle facilement testable par un test unitaire ?*
 Cette règle est facile à tester, il suffit de créer deux items : l'un de plus de 24h et un de moins de 24h, et de vérifier que le contenu est égal
@@ -52,17 +52,16 @@ Cette règle est facile à tester, il suffit de créer deux items : l'un de plus
 docker run -it -e POSTGRES_PASSWORD=password -p 5432:5432 postgres
 ```
 *Expliquer cette ligne de commande (y compris les options utilisées)*
-docker run permet de lancer un conteneur docker
--it permet de lancer en mode intéractif pour observer l'activité du conteneur lancé
--e permet d'initialiser les variables d'environnement (ici le mdp de la base PostgreSQL)
--p permet de choisir le port sur lequel le conteneur doit se connecter
-postgres est le conteneur contenant la base PostgreSQL
+* docker run permet de lancer un conteneur docker
+* -it permet de lancer en mode intéractif pour observer l'activité du conteneur lancé
+* -e permet d'initialiser les variables d'environnement (ici le mdp de la base PostgreSQL)
+* -p permet de choisir le port sur lequel le conteneur doit se connecter
+* postgres est le conteneur contenant la base PostgreSQL
 
 * Compléter le code manquant dans la méthode `TodoListController.createTodoItem()`
 
 *Pourquoi `todoItemRepository` est-il `null` ? Quelle est la meilleure façon de l'injecter ?*
-
-Il est null car il n'a pas été initialisé. On va utiliser l'injection de dépendance pour régler ce problème.
+* Il est null car il n'a pas été initialisé. On va utiliser l'injection de dépendance pour régler ce problème.
 
 * Modifier le code en conséquence.
 
@@ -104,6 +103,7 @@ Source : http://leanpub.com/get-your-hands-dirty-on-clean-architecture[Tom Hombe
   - la couche `domain` qui contient les entités (au sens DDD, pas au sens JPA). En général des classes complexes (méthodes riches, relations entre les entités)
 
 *Rappeler en quelques lignes les grands principes de l'architecture hexagonale.*
+* Le but de cette architecture est d'obtenir une partie métier réservée uniquement aux traitements fonctionnels. Pour cela, on sépare les services techniques d'une application et sa partie métier.
 
 Compléter ce code avec une fonctionnalité de création de `TodoItem`  persisté en base et appelé depuis un endpoint REST `POST /todos` qui :
 
