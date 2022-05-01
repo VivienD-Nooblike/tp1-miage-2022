@@ -121,7 +121,11 @@ _Temps estimé : 20 mins_
 
 *Quels types de tests devra-t-on écrire pour les adapteurs ?* 
 
+Nous allons réaliser des tests d'intégration.
+
 *Que teste-on dans ce cas ?*
+
+On vérifie le bon fonctionnement des différentes parties de l'application entre elles.
 
 *S'il vous reste du temps, écrire quelques uns de ces types de test.*
 
